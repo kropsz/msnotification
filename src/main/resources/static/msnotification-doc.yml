@@ -1,0 +1,31 @@
+openapi: 3.0.0
+info:
+  title: ms-notification
+  description: API de notificação
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /notify:
+    get:
+      summary: Buscar todas as notificações
+      description: Recurso para buscar todas as notificações
+      responses:
+        '200':
+          description: Operação realizada com sucesso
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotifyPayloadDto'
+        '500':
+          description: Erro interno de Servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorMessage'
+  components:
+    schemas:
+      UserRequestDto:
+        $ref: 'web/dto/NotifyPayloadDto'
+      ErrorMessage:
+        $ref: 'web/exception/ErrorMessage'
