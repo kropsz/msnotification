@@ -20,8 +20,13 @@ public class NotificationEvent {
 
     @RabbitListener(queues = "${mq.queue.event-notification}")
     public void reciveEventNotification(@Payload String payload) throws JsonMappingException, JsonProcessingException{
-        var mapper = new ObjectMapper();
-       Notify notify = mapper.readValue(payload, Notify.class);
-       notifyService.saveNotify(notify);
+        try {
+            var mapper = new ObjectMapper();
+            Notify notify = mapper.readValue(payload, Notify.class);
+            notifyService.saveNotify(notify);    
+        } catch (RuntimeException e) {
+            throw new RuntimeException("Erro ao salvar o evento de notificação.");
+        }
+       
     }
 }
