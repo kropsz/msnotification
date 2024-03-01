@@ -30,8 +30,8 @@ public class NotifyControllerTest {
 
     @Test
     public void getAllNotificationsTest() throws Exception {
-        Notify notify1 = new Notify(1L,"email1", "message1", "date");
-        Notify notify2 = new Notify(2L,"email2", "message2", "date");
+        Notify notify1 = new Notify("1","email1", "message1", "date");
+        Notify notify2 = new Notify("2","email2", "message2", "date");
         List<Notify> notifyList = Arrays.asList(notify1, notify2);
 
         when(notifyService.getAllDocumentsService()).thenReturn(notifyList);

@@ -22,12 +22,10 @@ public class ErrorMessage {
     private String statusText;
     private String message;
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private Map<String, String > errors;
+    private Map<String, String> errors;
 
     public ErrorMessage() {
     }
-
-
 
     public ErrorMessage(HttpServletRequest request, HttpStatus status, String message) {
         this.path = request.getRequestURI();
@@ -36,7 +34,6 @@ public class ErrorMessage {
         this.statusText = status.getReasonPhrase();
         this.message = message;
     }
-
 
     public ErrorMessage(HttpServletRequest request, HttpStatus status, String message, BindingResult result) {
         this.path = request.getRequestURI();
@@ -49,7 +46,7 @@ public class ErrorMessage {
 
     private void addErrors(BindingResult request) {
         this.errors = new HashMap<>();
-        for (FieldError fieldError : request.getFieldErrors()){
+        for (FieldError fieldError : request.getFieldErrors()) {
             this.errors.put(fieldError.getField(), fieldError.getDefaultMessage());
         }
     }

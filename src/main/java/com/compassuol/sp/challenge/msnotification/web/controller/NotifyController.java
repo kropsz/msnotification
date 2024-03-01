@@ -22,7 +22,7 @@ public class NotifyController {
     private final NotifyService notifyService;
 
     @GetMapping()
-    public ResponseEntity<List<NotifyPayloadDto>>getAllNotifications(){
+    public ResponseEntity<List<NotifyPayloadDto>> getAllNotifications() {
         var notifications = notifyService.getAllDocumentsService();
         return ResponseEntity.status(HttpStatus.OK).body(NotifyMapper.toListDto(notifications));
     }

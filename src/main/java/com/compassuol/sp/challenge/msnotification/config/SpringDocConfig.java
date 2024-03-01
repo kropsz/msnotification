@@ -11,20 +11,20 @@ import io.swagger.v3.oas.models.info.License;
 
 @Configuration
 public class SpringDocConfig {
-    
 
         @Bean
-    public OpenAPI openAPI(){
-        return new OpenAPI()
-                .components(new Components())
-                .info(
-                        new Info()
-                                .title("API de Notificação de Eventos")
-                                .description("API para notificação de eventos de uma aplicação de e-commerce.")
-                                .version("v1")
-                                .license(new License().name("Apache 2.0").url("https://www.apache.org/licenses/LICENSE-2.0"))
-                                .contact(new Contact().name("Pedro Esteves").email("pedroesteves007@outlook.com"))
-                );
-    }
+        public OpenAPI openAPI() {
+                return new OpenAPI()
+                                .components(new Components())
+                                .info(
+                                                new Info()
+                                                                .title("API de Notificação de Eventos")
+                                                                .description("API para notificação de eventos de uma aplicação de e-commerce.")
+                                                                .version("v1")
+                                                                .license(new License().name("Apache 2.0").url(
+                                                                                "https://www.apache.org/licenses/LICENSE-2.0"))
+                                                                .contact(new Contact().name("Pedro Esteves")
+                                                                                .email("pedroesteves007@outlook.com")));
+        }
 
 }

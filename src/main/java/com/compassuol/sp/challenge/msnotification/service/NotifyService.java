@@ -13,12 +13,12 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class NotifyService {
-    
+
     private final NotifyRepository notifyRepository;
 
     @Transactional
-    public Notify saveNotify(Notify notify){
-    return notifyRepository.save(notify);
+    public Notify saveNotify(Notify notify) {
+        return notifyRepository.save(notify);
     }
 
     @Transactional(readOnly = true)

@@ -13,11 +13,11 @@ import lombok.extern.slf4j.Slf4j;
 @RestControllerAdvice
 public class ApiExceptionHandler {
     @ExceptionHandler(RuntimeException.class)
-    public ResponseEntity<ErrorMessage> runtimeExceptionHandler(RuntimeException ex, HttpServletRequest request){
+    public ResponseEntity<ErrorMessage> runtimeExceptionHandler(RuntimeException ex, HttpServletRequest request) {
         log.error("Api Error - ", ex);
-    return ResponseEntity
-            .status(HttpStatus.INTERNAL_SERVER_ERROR)
-            .contentType(MediaType.APPLICATION_JSON)
-            .body(new ErrorMessage(request, HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage()));
-    }   
+        return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(new ErrorMessage(request, HttpStatus.INTERNAL_SERVER_ERROR, ex.getMessage()));
+    }
 }

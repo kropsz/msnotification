@@ -15,18 +15,18 @@ import lombok.RequiredArgsConstructor;
 @Component
 @RequiredArgsConstructor
 public class NotificationEvent {
-    
+
     private final NotifyService notifyService;
 
     @RabbitListener(queues = "${mq.queue.event-notification}")
-    public void reciveEventNotification(@Payload String payload) throws JsonMappingException, JsonProcessingException{
+    public void reciveEventNotification(@Payload String payload) throws JsonMappingException, JsonProcessingException {
         try {
             var mapper = new ObjectMapper();
             Notify notify = mapper.readValue(payload, Notify.class);
-            notifyService.saveNotify(notify);    
+            notifyService.saveNotify(notify);
         } catch (RuntimeException e) {
             throw new RuntimeException("Erro ao salvar o evento de notificação.");
         }
-       
+
     }
 }
