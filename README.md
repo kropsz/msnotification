@@ -62,7 +62,7 @@ No terminal navegue até a pasta raiz do projeto e execute o comando `docker-com
 
 > **Docker command MongoDB**: `docker run -it --network some-network --rm mongo mongosh --host some-mongo test`
 
->  **Docker command MongoDB**: `docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.13-management`
+>  **Docker command RabbitMQ**: `docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.13-management`
 
 ### Conclusão
 
