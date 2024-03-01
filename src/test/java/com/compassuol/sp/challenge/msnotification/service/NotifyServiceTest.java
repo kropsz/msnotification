@@ -29,7 +29,7 @@ public class NotifyServiceTest {
 
     @BeforeEach
     public void setUp() {
-        NOTIFY = new Notify(1L, "email@email.com", "CREATE", "2002/02/02");
+        NOTIFY = new Notify("1", "email@email.com", "CREATE", "2002/02/02");
         notfiyList = new ArrayList<>();
         notfiyList.add(NOTIFY);
     }

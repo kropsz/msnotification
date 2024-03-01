@@ -1,17 +1,5 @@
-spring:
-  application:
-    name: ms-notification
-  datasource:
-    driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/db_notification?createDatabaseIfNotExist=true&serverTimezone=UTC
-    username: root
-    password: 1234567
-  jpa:
-    hibernate:
-      ddl-auto: update
-    generate-ddl: true
-    show-sql: true
-    open-in-view: true
+server:
+  port: 8082
   
   rabbitmq:
     host: localhost
@@ -19,6 +7,12 @@ spring:
     username: guest
     password: guest
 
+spring:
+  data:
+    mongodb:
+      database: db_address
+      port: 27017
+      host: localhost
 mq:
   queue:
-    event-notification: event-notification 
+    event-notification: event-notification
