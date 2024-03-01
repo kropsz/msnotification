@@ -1,4 +1,4 @@
-# Microserviço de Usuários (CompassUOL)
+# Microserviço de Notificação (CompassUOL)
 O projeto foi desenvolvido para o desafio 3 do programa de Bolsas da Compass UOL | Back-end Journey (Spring Boot) - AWS Cloud Context. Esse é um microserviço para receber e guardar informações de eventos do microserviço [msuser](https://github.com/kropsz/msuser). Quando algum evento como o de registro, login, atualização de usuário e atualização de senha é utilizado no msuser esse microserviço recebe a mensagem via RabbitMQ e a armazena no banco de dados.
 
 ## Tecnologias Utilizadas
